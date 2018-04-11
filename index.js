@@ -8,6 +8,7 @@ import {
   LayoutAnimation,
   InteractionManager,
 } from 'react-native'
+import { KeyboardAwareListView } from 'react-native-keyboard-aware-scroll-view';
 
 const HEIGHT = Dimensions.get('window').height
 
@@ -481,7 +482,7 @@ class SortableListView extends React.Component {
     const scrollEnabled =
       !this.state.active && this.props.scrollEnabled !== false
 
-    const ListViewComponent = this.props.ListViewComponent || ListView
+    const ListViewComponent = this.props.ListViewComponent || KeyboardAwareListView
 
     return (
       <View ref="wrapper" style={{ flex: 1 }} collapsable={false}>
